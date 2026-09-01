@@ -89,7 +89,13 @@ export default function Home() {
 
       <footer className="mx-auto flex w-[min(1120px,calc(100%-2rem))] flex-col justify-between gap-4 border-t border-[var(--border)] py-10 text-sm text-muted md:flex-row md:items-center">
         <Brand />
-        <span>Free tools. Private files. Clear work.</span>
+        <p>
+          © 2026{" "}
+          <a href="https://rosybrown-lion-304022.hostingersite.com/" target="_blank" rel="noreferrer" className="font-semibold text-[var(--foreground)] hover:text-[var(--accent-strong)]">
+            Ahmed Marey
+          </a>
+          . All rights reserved.
+        </p>
       </footer>
     </main>
   );
