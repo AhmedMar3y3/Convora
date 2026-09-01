@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #f7f8fb;
+  --foreground: #10131a;
+  --muted: #667085;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --border: rgba(22, 28, 45, 0.12);
+  --accent: #0f9f8f;
+  --accent-strong: #0a756d;
+  --accent-soft: rgba(15, 159, 143, 0.14);
+  --violet: #7562f8;
+  --rose: #d44f72;
+  --shadow: 0 24px 90px rgba(34, 45, 67, 0.14);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #080a0f;
+  --foreground: #f5f7fb;
+  --muted: #a7afbe;
+  --surface: rgba(18, 22, 31, 0.68);
+  --surface-strong: rgba(20, 25, 35, 0.9);
+  --border: rgba(235, 241, 255, 0.14);
+  --accent: #30d5c8;
+  --accent-strong: #8ff3eb;
+  --accent-soft: rgba(48, 213, 200, 0.16);
+  --violet: #a897ff;
+  --rose: #ff7ea4;
+  --shadow: 0 28px 100px rgba(0, 0, 0, 0.36);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 6%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 26rem),
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--rose) 18%, transparent), transparent 22rem),
+    linear-gradient(135deg, var(--background), color-mix(in srgb, var(--background) 88%, var(--accent) 12%));
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.button-primary,
+button.button-primary {
+  background: var(--accent);
+  color: #041310;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 58%, white);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(140%);
+}
+
+.glass-strong {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(28px) saturate(150%);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.page-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.brand-mark-dark {
+  display: none;
+}
+
+.dark .brand-mark-light {
+  display: none;
+}
+
+.dark .brand-mark-dark {
+  display: block;
+}
