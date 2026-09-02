@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, Database, FileAudio, FileImage, FileText, FileVideo, Layers3, Shapes, Sparkles } from "lucide-react";
+import { ArrowRight, Database, FileAudio, FileImage, FileText, FileVideo, Layers3, Shapes, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ const categories = [
   { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
   { name: "Video", href: "/tools/video", description: "Convert, compress, trim, and extract audio from video.", status: "Available now", Icon: FileVideo, active: true },
   { name: "Data", href: "/tools/data", description: "Convert, format, merge, split, and clean structured data.", status: "Available now", Icon: Database, active: true },
+  { name: "Security", href: "/tools/security", description: "Encrypt, decrypt, hash files, and generate strong passwords.", status: "Available now", Icon: ShieldCheck, active: true },
   { name: "Other", href: "/tools/other", description: "Generate and scan QR codes and barcodes.", status: "Available now", Icon: Shapes, active: true },
 ];
 

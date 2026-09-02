@@ -1,4 +1,4 @@
-import { AudioLines, Barcode, Braces, Crop, FileAudio2, FileJson, FileOutput, FileSpreadsheet, Files, GitMerge, ImageDown, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, Video, VideoIcon, Waves } from "lucide-react";
+import { AudioLines, Barcode, Braces, Crop, FileAudio2, FileJson, FileKey2, FileLock2, FileOutput, FileSpreadsheet, Files, Fingerprint, GitMerge, ImageDown, KeyRound, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, Video, VideoIcon, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -133,6 +133,13 @@ export const dataTools = [
   { id: "merge-csv", name: "Merge CSV & Excel Files", shortName: "Merge files", category: "Data", description: "Combine CSV and Excel files and align their columns by header.", route: "/tools/data/merge-csv", icon: Files },
   { id: "split-csv", name: "Split CSV & Excel", shortName: "Split file", category: "Data", description: "Split large CSV or Excel files by rows or a target file count.", route: "/tools/data/split-csv", icon: Scissors },
   { id: "csv-deduplicator", name: "CSV & Excel Deduplicator", shortName: "Remove duplicates", category: "Data", description: "Detect and remove duplicate rows from CSV or XLSX using the columns you select.", route: "/tools/data/deduplicate-csv", icon: Sparkles },
+] as const;
+
+export const securityTools = [
+  { id: "encrypt-file", name: "Encrypt File", shortName: "Encrypt", category: "Security", description: "Password-encrypt any file with authenticated AES-256-GCM encryption.", route: "/tools/security/encrypt", icon: FileLock2 },
+  { id: "decrypt-file", name: "Decrypt File", shortName: "Decrypt", category: "Security", description: "Restore a file encrypted by Convora and verify that it was not altered.", route: "/tools/security/decrypt", icon: FileKey2 },
+  { id: "file-hash", name: "File Hash & Checksum", shortName: "Hash file", category: "Security", description: "Generate SHA checksums or verify a file against a known hash.", route: "/tools/security/hash", icon: Fingerprint },
+  { id: "password-generator", name: "Password Generator", shortName: "Generate", category: "Security", description: "Create strong passwords locally with length and character controls.", route: "/tools/security/password-generator", icon: KeyRound },
 ] as const;
 
 export function getTool(id: ToolId) {
