@@ -2,6 +2,14 @@
   "name": "convora",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "ffmpeg-static",
+      "sharp",
+      "unrs-resolver"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

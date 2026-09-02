@@ -101,15 +101,15 @@ These utilities run locally in the browser. Uploaded scanner images are not sent
 ### Requirements
 
 - Node.js 20 or newer
-- npm
+- pnpm 10
 
 ### Installation
 
 ```bash
 git clone <your-repository-url>
 cd convora
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -118,12 +118,12 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Command | Purpose |
 | --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create a production build and run TypeScript checks |
-| `npm run start` | Run the production server |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run the Vitest suite once |
-| `npm run test:watch` | Run tests in watch mode |
+| `pnpm dev` | Start the development server |
+| `pnpm build` | Create a production build and run TypeScript checks |
+| `pnpm start` | Run the production server |
+| `pnpm lint` | Run ESLint |
+| `pnpm test` | Run the Vitest suite once |
+| `pnpm test:watch` | Run tests in watch mode |
 
 ## Project structure
 
@@ -171,7 +171,7 @@ Each category has its own workspace route and will become available independentl
 1. Create a focused branch.
 2. Keep changes aligned with the existing tool registry and processing boundaries.
 3. Add tests proportional to the processing or interface risk.
-4. Run `npm test` and `npm run build` before opening a pull request.
+4. Run `pnpm test` and `pnpm build` before opening a pull request.
 
 ---
 
