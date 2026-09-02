@@ -76,7 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </nav>
             <ThemeToggle />
           </header>
-          <aside className="mx-auto mt-7 flex w-[min(1120px,calc(100%-2rem))] flex-col items-center justify-center gap-2 rounded-[8px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-center text-sm text-muted sm:flex-row" aria-label="Support Gaza relief">
+          <aside className="liquid-glass mx-auto mt-7 flex w-[min(1120px,calc(100%-2rem))] flex-col items-center justify-center gap-2 rounded-[16px] px-4 py-3 text-center text-sm text-muted sm:flex-row" aria-label="Support Gaza relief">
             <span className="inline-flex items-center gap-2"><Heart size={15} className="text-[var(--rose)]" aria-hidden /> Convora is free, private, and ad-free.</span>
             <a href="https://www.pcrf.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-semibold text-[var(--foreground)] underline decoration-[var(--accent)] decoration-2 underline-offset-4 transition hover:text-[var(--accent-strong)]">
               Help support Gaza relief <ExternalLink size={13} aria-hidden />

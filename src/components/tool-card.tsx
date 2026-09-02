@@ -7,7 +7,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
   const Icon = tool.icon;
 
   return (
-    <article className="group rounded-[8px] p-5 transition hover:-translate-y-1 glass">
+    <article className="group rounded-[18px] p-5 glass liquid-glass-interactive">
       <div className="mb-8 flex items-center justify-between">
         <span className="grid size-12 place-items-center rounded-[8px] bg-[var(--accent-soft)] text-[var(--accent-strong)]">
           <Icon size={23} aria-hidden />

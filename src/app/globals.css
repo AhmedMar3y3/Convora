@@ -5,9 +5,11 @@
   --background: #f7f8fb;
   --foreground: #10131a;
   --muted: #667085;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: rgba(255, 255, 255, 0.92);
-  --border: rgba(22, 28, 45, 0.12);
+  --surface: rgba(255, 255, 255, 0.48);
+  --surface-strong: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.62);
+  --glass-edge: rgba(255, 255, 255, 0.88);
+  --glass-shadow: rgba(45, 65, 92, 0.16);
   --accent: #0f9f8f;
   --accent-strong: #0a756d;
   --accent-soft: rgba(15, 159, 143, 0.14);
@@ -21,9 +23,11 @@
   --background: #080a0f;
   --foreground: #f5f7fb;
   --muted: #a7afbe;
-  --surface: rgba(18, 22, 31, 0.68);
-  --surface-strong: rgba(20, 25, 35, 0.9);
-  --border: rgba(235, 241, 255, 0.14);
+  --surface: rgba(18, 25, 34, 0.46);
+  --surface-strong: rgba(23, 30, 42, 0.66);
+  --border: rgba(216, 235, 255, 0.16);
+  --glass-edge: rgba(255, 255, 255, 0.22);
+  --glass-shadow: rgba(0, 0, 0, 0.42);
   --accent: #30d5c8;
   --accent-strong: #8ff3eb;
   --accent-soft: rgba(48, 213, 200, 0.16);
@@ -49,6 +53,18 @@ body {
     linear-gradient(135deg, var(--background), color-mix(in srgb, var(--background) 88%, var(--accent) 12%));
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 28%, color-mix(in srgb, var(--accent) 17%, transparent) 0 7rem, transparent 22rem),
+    radial-gradient(circle at 78% 64%, color-mix(in srgb, var(--violet) 14%, transparent) 0 8rem, transparent 25rem);
+  filter: blur(18px);
 }
 
 a {
@@ -93,17 +109,52 @@ select:focus-visible,
 }
 
 .glass {
-  background: var(--surface);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--surface-strong) 82%, white 18%), color-mix(in srgb, var(--surface) 92%, transparent));
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(24px) saturate(140%);
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 -1px 0 rgba(255,255,255,.05), 0 18px 55px var(--glass-shadow);
+  backdrop-filter: blur(30px) saturate(175%);
+  -webkit-backdrop-filter: blur(30px) saturate(175%);
 }
 
 .glass-strong {
-  background: var(--surface-strong);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--surface-strong) 88%, white 12%), color-mix(in srgb, var(--surface) 86%, transparent));
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(28px) saturate(150%);
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 -1px 0 rgba(255,255,255,.06), 0 24px 70px var(--glass-shadow);
+  backdrop-filter: blur(36px) saturate(190%);
+  -webkit-backdrop-filter: blur(36px) saturate(190%);
+}
+
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--surface-strong) 86%, white 14%), color-mix(in srgb, var(--surface) 90%, transparent));
+  border: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 1px 0 0 rgba(255,255,255,.08), 0 12px 38px var(--glass-shadow);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+}
+
+.liquid-glass.absolute {
+  position: absolute;
+}
+
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,.2), transparent 32%, transparent 68%, rgba(255,255,255,.06));
+  opacity: .72;
+}
+
+.liquid-glass-interactive {
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.liquid-glass-interactive:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  box-shadow: inset 0 1px 0 var(--glass-edge), 0 18px 46px var(--glass-shadow), 0 0 24px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .text-muted {

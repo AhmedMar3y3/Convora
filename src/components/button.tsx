@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary: "button-primary shadow-[var(--shadow)] hover:brightness-105 hover:scale-[1.02]",
-  secondary: "border border-[var(--border)] bg-[var(--surface-strong)] text-[var(--foreground)] hover:bg-[var(--accent-soft)]",
-  ghost: "text-[var(--foreground)] hover:bg-[var(--accent-soft)]",
+  secondary: "liquid-glass liquid-glass-interactive text-[var(--foreground)] hover:bg-[var(--accent-soft)]",
+  ghost: "text-[var(--foreground)] hover:bg-[var(--accent-soft)] hover:backdrop-blur-xl",
 };
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

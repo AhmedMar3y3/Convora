@@ -7,7 +7,8 @@ export function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
+    const frame = requestAnimationFrame(() => setDark(document.documentElement.classList.contains("dark")));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   function toggleTheme() {
@@ -21,7 +22,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="grid size-10 place-items-center rounded-full border border-[var(--border)] bg-[var(--surface-strong)] text-[var(--foreground)] transition hover:scale-105"
+      className="liquid-glass liquid-glass-interactive grid size-10 place-items-center rounded-full text-[var(--foreground)]"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       title={dark ? "Light mode" : "Dark mode"}
     >

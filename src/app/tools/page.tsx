@@ -11,7 +11,7 @@ const categories = [
   { name: "Image", href: "/tools/images", description: "Convert, compress, resize, and crop images.", status: "Available now", Icon: FileImage, active: true },
   { name: "Audio", href: "/tools/audio", description: "Convert, compress, trim, and merge audio.", status: "Available now", Icon: FileAudio, active: true },
   { name: "Documents", href: "/tools/documents", description: "Scan, extract, view, sanitize, and compare documents.", status: "Available now", Icon: FileText, active: true },
-  { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
+  { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Available now", Icon: Layers3, active: true },
   { name: "Video", href: "/tools/video", description: "Convert, compress, trim, and extract audio from video.", status: "Available now", Icon: FileVideo, active: true },
   { name: "Data", href: "/tools/data", description: "Convert, format, merge, split, and clean structured data.", status: "Available now", Icon: Database, active: true },
   { name: "Security", href: "/tools/security", description: "Encrypt, decrypt, hash files, and generate strong passwords.", status: "Available now", Icon: ShieldCheck, active: true },
@@ -25,7 +25,7 @@ export default function ToolsPage() {
         <Sparkles size={16} /> Choose a workspace
       </div>
       <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[1.04] md:text-7xl">A place for every kind of file.</h1>
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">Each category has its own focused workspace. Image, audio, QR code, and barcode tools are available today, with more categories arriving independently.</p>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">Every category has its own focused workspace, with consistent controls for transforming, inspecting, organizing, and protecting your files.</p>
 
       <div className="mt-14 grid gap-4 md:grid-cols-2">
         {categories.map(({ name, href, description, status, Icon, active }) => (
