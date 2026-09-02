@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowRight, FileAudio, FileImage, FileText, FileVideo, Layers3, Sparkles } from "lucide-react";
+import { ArrowRight, FileAudio, FileImage, FileText, FileVideo, Layers3, Shapes, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "File Tool Categories",
-  description: "Choose Convora tools for images, audio, documents, PDF, and video.",
+  description: "Choose Convora tools for images, audio, QR codes, barcodes, documents, PDF, and video.",
 };
 
 const categories = [
@@ -13,6 +13,7 @@ const categories = [
   { name: "Documents", href: "/tools/documents", description: "Convert, merge, split, and organize documents.", status: "Coming soon", Icon: FileText },
   { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
   { name: "Video", href: "/tools/video", description: "Convert, compress, resize, and trim video.", status: "Coming soon", Icon: FileVideo },
+  { name: "Other", href: "/tools/other", description: "Generate and scan QR codes and barcodes.", status: "Available now", Icon: Shapes, active: true },
 ];
 
 export default function ToolsPage() {
@@ -22,7 +23,7 @@ export default function ToolsPage() {
         <Sparkles size={16} /> Choose a workspace
       </div>
       <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[1.04] md:text-7xl">A place for every kind of file.</h1>
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">Each file category has its own focused workspace. Image tools are available today, with the remaining categories arriving independently.</p>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">Each category has its own focused workspace. Image, audio, QR code, and barcode tools are available today, with more categories arriving independently.</p>
 
       <div className="mt-14 grid gap-4 md:grid-cols-2">
         {categories.map(({ name, href, description, status, Icon, active }) => (

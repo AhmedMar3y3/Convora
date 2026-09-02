@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { ExternalLink, Heart } from "lucide-react";
 import { Brand } from "@/components/brand";
 import { ThemeToggle } from "@/components/theme-toggle";
 import "./globals.css";
@@ -69,9 +70,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/tools/documents">Docs</Link>
               <Link href="/tools/pdf">PDF</Link>
               <Link href="/tools/video">Video</Link>
+              <Link href="/tools/other">Other</Link>
             </nav>
             <ThemeToggle />
           </header>
+          <aside className="mx-auto mt-7 flex w-[min(1120px,calc(100%-2rem))] flex-col items-center justify-center gap-2 rounded-[8px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-center text-sm text-muted sm:flex-row" aria-label="Support Gaza relief">
+            <span className="inline-flex items-center gap-2"><Heart size={15} className="text-[var(--rose)]" aria-hidden /> Convora is free, private, and ad-free.</span>
+            <a href="https://www.pcrf.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-semibold text-[var(--foreground)] underline decoration-[var(--accent)] decoration-2 underline-offset-4 transition hover:text-[var(--accent-strong)]">
+              Help support Gaza relief <ExternalLink size={13} aria-hidden />
+            </a>
+          </aside>
           {children}
         </div>
       </body>

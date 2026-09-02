@@ -14,11 +14,11 @@ export default function Home() {
           </div>
           <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] md:text-7xl">Everything your files need. Nothing they do not.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-            Convora brings conversion, compression, editing, and organization into one calm workspace for every file type.
+            Convora brings conversion, compression, editing, code generation, and scanning into one calm workspace.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <LinkButton href="/tools">Explore all tools <ArrowRight size={18} aria-hidden /></LinkButton>
-            <LinkButton href="/tools/audio" variant="secondary">Use audio tools</LinkButton>
+            <LinkButton href="/tools/other" variant="secondary">Create a QR code</LinkButton>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-muted">
             <span className="flex items-center gap-2"><Check size={16} className="text-[var(--accent-strong)]" /> Free to use</span>
@@ -34,6 +34,7 @@ export default function Home() {
           <span className="absolute right-0 top-28 rounded-full border border-[var(--border)] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold shadow-lg">Images</span>
           <span className="absolute bottom-24 left-2 rounded-full border border-[var(--border)] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold shadow-lg">Audio</span>
           <span className="absolute bottom-16 right-5 rounded-full border border-[var(--border)] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold shadow-lg">Video</span>
+          <span className="absolute right-12 top-1/2 rounded-full border border-[var(--border)] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold shadow-lg">QR &amp; barcodes</span>
           <div className="relative grid size-52 place-items-center rounded-full bg-[var(--surface-strong)] shadow-[var(--shadow)]">
             <span className="relative size-36" aria-hidden>
               <Image src="/convora-mark-light.png" alt="" fill sizes="144px" className="brand-mark-light object-contain" priority />
@@ -59,7 +60,7 @@ export default function Home() {
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           <Value icon={MousePointerClick} title="Direct" copy="Choose a tool, add your files, make the change, and download. Every screen earns its place." />
-          <Value icon={Layers3} title="Consistent" copy="Images are available first. Documents, voice, PDF, video, and archives will follow the same clear system." />
+          <Value icon={Layers3} title="Consistent" copy="Images, audio, QR codes, and barcodes share one clear system. More file categories will follow it." />
           <Value icon={Zap} title="Fast" copy="Focused controls and request-time processing keep the path between input and result short." />
         </div>
       </section>
@@ -81,9 +82,9 @@ export default function Home() {
       </section>
 
       <section className="mx-auto py-24 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-strong)]">Images and audio are ready now</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-strong)]">Images, audio, and everyday utilities are ready</p>
         <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold md:text-5xl">Start with the tools already shipping.</h2>
-        <p className="mx-auto mt-5 max-w-xl text-muted">Convert and refine images, or convert, compress, trim, and merge audio with precise controls.</p>
+        <p className="mx-auto mt-5 max-w-xl text-muted">Refine images and audio, generate QR codes and barcodes, or decode them directly from an uploaded image.</p>
         <LinkButton href="/tools" className="mt-8">Go to tools <ArrowRight size={18} /></LinkButton>
       </section>
 

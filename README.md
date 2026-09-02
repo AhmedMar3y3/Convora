@@ -23,7 +23,7 @@
 
 Convora brings focused file utilities into one consistent interface. There are no accounts, no file history, and no permanent file storage. An upload exists only for the active request: Convora validates it, processes it, returns the result, and releases the request resources.
 
-The project currently ships a complete image workspace. Dedicated Audio, Documents, PDF, and Video workspaces are planned around the same private processing model.
+The project currently ships complete Image and Audio workspaces, plus browser-native QR code and barcode utilities. Dedicated Documents, PDF, and Video workspaces are planned around the same private processing model.
 
 ## Image tools
 
@@ -46,6 +46,26 @@ Every listed image format can be used as both an input and an output:
 `JPG` · `PNG` · `WebP` · `AVIF` · `GIF` · `TIFF` · `BMP` · `SVG`
 
 Multiple processed images are returned as a ZIP archive. Image-to-PDF creates one ordered PDF document.
+
+## Audio tools
+
+| Tool | Capabilities |
+| --- | --- |
+| **Audio Converter** | Convert between MP3, WAV, AAC, M4A, FLAC, OGG, and OPUS |
+| **Audio Compressor** | Reduce audio size with direct bitrate control and visible savings |
+| **Audio Trimmer** | Select, preview, and export a precise section using a waveform editor |
+| **Audio Merger** | Reorder and trim multiple clips before joining them into one track |
+
+## Other tools
+
+These utilities run locally in the browser. Uploaded scanner images are not sent to a Convora processing endpoint.
+
+| Tool | Capabilities |
+| --- | --- |
+| **QR Code Generator** | Create QR codes for text, URLs, email, phone, SMS, and Wi-Fi credentials; control size, error correction, colors, and margin; export PNG or SVG |
+| **QR Code Scanner** | Decode a QR code from an uploaded image, copy its content, or open detected web links |
+| **Barcode Generator** | Generate Code 128, Code 39, EAN-13, EAN-8, and UPC-A with scale, height, and readable-text controls; export PNG or SVG |
+| **Barcode Scanner** | Detect common barcode formats from an uploaded image and copy the decoded value |
 
 ## Private by design
 
@@ -71,6 +91,9 @@ Multiple processed images are returned as a ZIP archive. Image-to-PDF creates on
 | PDF generation | pdf-lib |
 | File validation | file-type |
 | Batch downloads | JSZip |
+| QR code generation | qrcode |
+| QR and barcode scanning | ZXing |
+| Barcode generation | bwip-js |
 | Testing | Vitest |
 
 ## Getting started
@@ -107,10 +130,12 @@ Open [http://localhost:3000](http://localhost:3000).
 ```text
 src/
 ├── app/
-│   ├── api/images/          # Runtime processing endpoints
+│   ├── api/                 # Runtime image and audio processing endpoints
 │   └── tools/               # Category and individual tool routes
 ├── components/              # Shared brand and interface components
 ├── features/images/         # Image tool workspaces
+├── features/audio/          # Audio tool workspaces
+├── features/other/          # Browser-native QR and barcode workspaces
 ├── formats/                 # Central format registry
 ├── processing/              # Sharp processing and validation
 └── tools/                   # Tool registry and route metadata
@@ -122,11 +147,11 @@ public/
 ## Processing flow
 
 ```text
-Browser upload
+Browser input or upload
      ↓
-Extension, size, and content validation
+Client-side QR/barcode work, or extension, size, and content validation
      ↓
-Request-time processing with Sharp / pdf-lib / exifr
+Browser-native processing, or request-time processing with Sharp / FFmpeg / pdf-lib / exifr
      ↓
 Single download, PDF, or ZIP response
      ↓
@@ -135,7 +160,6 @@ Request resources released
 
 ## Roadmap
 
-- Audio and voice conversion, compression, trimming, and cleanup
 - Document conversion, merging, extraction, and organization
 - Dedicated PDF creation, splitting, merging, and protection
 - Video conversion, compression, resizing, and trimming

@@ -1,4 +1,4 @@
-import { AudioLines, Crop, FileOutput, GitMerge, ImageDown, Maximize2, Minimize2, RotateCw, ScanSearch, Scissors, ShieldCheck, Stamp, Waves } from "lucide-react";
+import { AudioLines, Barcode, Crop, FileOutput, GitMerge, ImageDown, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Stamp, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -110,6 +110,13 @@ export const audioTools = [
   { id: "audio-compressor", name: "Audio Compressor", shortName: "Compress", category: "Audio", description: "Reduce audio size with direct bitrate control and visible savings.", route: "/tools/audio/compress", icon: Waves, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3"] },
   { id: "audio-trimmer", name: "Audio Trimmer", shortName: "Trim", category: "Audio", description: "Select a precise section on a waveform, preview it, and export.", route: "/tools/audio/trim", icon: Scissors, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
   { id: "audio-merger", name: "Audio Merger", shortName: "Merge", category: "Audio", description: "Reorder and trim multiple clips, then join them into one track.", route: "/tools/audio/merge", icon: GitMerge, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
+] as const;
+
+export const otherTools = [
+  { id: "qr-generator", name: "QR Code Generator", shortName: "Generate QR", category: "Other", description: "Create custom QR codes for text, links, contact details, messages, and Wi-Fi.", route: "/tools/other/qr-generator", icon: QrCode },
+  { id: "qr-scanner", name: "QR Code Scanner", shortName: "Scan QR", category: "Other", description: "Upload a QR code image, decode its content, then copy or open the result.", route: "/tools/other/qr-scanner", icon: ScanLine },
+  { id: "barcode-generator", name: "Barcode Generator", shortName: "Generate barcode", category: "Other", description: "Generate Code 128, Code 39, EAN-13, EAN-8, and UPC-A barcodes.", route: "/tools/other/barcode-generator", icon: Barcode },
+  { id: "barcode-scanner", name: "Barcode Scanner", shortName: "Scan barcode", category: "Other", description: "Read common barcode formats from an image and copy the decoded value.", route: "/tools/other/barcode-scanner", icon: ScanBarcode },
 ] as const;
 
 export function getTool(id: ToolId) {
