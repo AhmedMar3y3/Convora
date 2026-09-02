@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const categories = [
   { name: "Image", href: "/tools/images", description: "Convert, compress, resize, and crop images.", status: "Available now", Icon: FileImage, active: true },
   { name: "Audio", href: "/tools/audio", description: "Convert, compress, trim, and merge audio.", status: "Available now", Icon: FileAudio, active: true },
-  { name: "Documents", href: "/tools/documents", description: "Convert, merge, split, and organize documents.", status: "Coming soon", Icon: FileText },
+  { name: "Documents", href: "/tools/documents", description: "Scan, extract, view, sanitize, and compare documents.", status: "Available now", Icon: FileText, active: true },
   { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
   { name: "Video", href: "/tools/video", description: "Convert, compress, trim, and extract audio from video.", status: "Available now", Icon: FileVideo, active: true },
   { name: "Data", href: "/tools/data", description: "Convert, format, merge, split, and clean structured data.", status: "Available now", Icon: Database, active: true },

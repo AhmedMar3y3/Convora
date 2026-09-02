@@ -1,4 +1,4 @@
-import { AudioLines, Barcode, Braces, Crop, FileAudio2, FileJson, FileKey2, FileLock2, FileOutput, FileSpreadsheet, Files, Fingerprint, GitMerge, ImageDown, KeyRound, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, Video, VideoIcon, Waves } from "lucide-react";
+import { AudioLines, Barcode, Braces, CaseSensitive, Crop, FileAudio2, FileImage, FileJson, FileKey2, FileLock2, FileOutput, FileSearch, FileSpreadsheet, FileText, Files, Fingerprint, GitCompare, GitMerge, ImageDown, KeyRound, ListTree, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, TextCursorInput, Video, VideoIcon, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -140,6 +140,21 @@ export const securityTools = [
   { id: "decrypt-file", name: "Decrypt File", shortName: "Decrypt", category: "Security", description: "Restore a file encrypted by Convora and verify that it was not altered.", route: "/tools/security/decrypt", icon: FileKey2 },
   { id: "file-hash", name: "File Hash & Checksum", shortName: "Hash file", category: "Security", description: "Generate SHA checksums or verify a file against a known hash.", route: "/tools/security/hash", icon: Fingerprint },
   { id: "password-generator", name: "Password Generator", shortName: "Generate", category: "Security", description: "Create strong passwords locally with length and character controls.", route: "/tools/security/password-generator", icon: KeyRound },
+] as const;
+
+export const documentTools = [
+  { id: "image-to-text", name: "Image to Text (OCR)", shortName: "Extract text", category: "Documents", description: "Extract editable text from screenshots, scans, and photos in your browser.", route: "/tools/documents/image-to-text", icon: FileSearch },
+  { id: "document-scanner", name: "Document Scanner", shortName: "Scan document", category: "Documents", description: "Clean up a photographed page and export it as a sharp PNG or PDF.", route: "/tools/documents/scanner", icon: ScanLine },
+  { id: "word-to-text", name: "Word to Text", shortName: "Extract text", category: "Documents", description: "Pull clean, reusable text from DOCX documents without opening Word.", route: "/tools/documents/word-to-text", icon: FileText },
+  { id: "document-viewer", name: "Document Viewer", shortName: "View document", category: "Documents", description: "Read DOCX, TXT, Markdown, and RTF files in a focused browser view.", route: "/tools/documents/viewer", icon: FileText },
+  { id: "document-metadata", name: "Document Metadata Remover", shortName: "Clean document", category: "Documents", description: "Remove author details, comments, revisions, and hidden DOCX metadata.", route: "/tools/documents/remove-metadata", icon: ShieldCheck },
+  { id: "document-compare", name: "Document Compare", shortName: "Compare files", category: "Documents", description: "Compare two documents and highlight words that were added or removed.", route: "/tools/documents/compare", icon: GitCompare },
+  { id: "extract-document-images", name: "Extract Images", shortName: "Extract images", category: "Documents", description: "Recover embedded DOCX images at their original quality and download them together.", route: "/tools/documents/extract-images", icon: FileImage },
+  { id: "document-find-replace", name: "Find & Replace", shortName: "Replace text", category: "Documents", description: "Find repeated text in a DOCX and replace every match while retaining its structure.", route: "/tools/documents/find-replace", icon: TextCursorInput },
+  { id: "merge-documents", name: "Merge Documents", shortName: "Merge documents", category: "Documents", description: "Arrange multiple Word files and combine them into one ordered DOCX.", route: "/tools/documents/merge", icon: GitMerge },
+  { id: "split-document", name: "Split Document", shortName: "Split document", category: "Documents", description: "Define page ranges and export each range as a separate Word document.", route: "/tools/documents/split", icon: Scissors },
+  { id: "extract-document-sections", name: "Extract Sections", shortName: "Choose sections", category: "Documents", description: "Select heading-defined sections and create a focused new DOCX.", route: "/tools/documents/extract-sections", icon: ListTree },
+  { id: "document-counter", name: "Word & Character Counter", shortName: "Count text", category: "Documents", description: "Measure words, characters, sentences, paragraphs, reading time, and speaking time.", route: "/tools/documents/counter", icon: CaseSensitive },
 ] as const;
 
 export function getTool(id: ToolId) {
