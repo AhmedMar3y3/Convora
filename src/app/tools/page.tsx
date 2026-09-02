@@ -12,7 +12,7 @@ const categories = [
   { name: "Audio", href: "/tools/audio", description: "Convert, compress, trim, and merge audio.", status: "Available now", Icon: FileAudio, active: true },
   { name: "Documents", href: "/tools/documents", description: "Convert, merge, split, and organize documents.", status: "Coming soon", Icon: FileText },
   { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
-  { name: "Video", href: "/tools/video", description: "Convert, compress, resize, and trim video.", status: "Coming soon", Icon: FileVideo },
+  { name: "Video", href: "/tools/video", description: "Convert, compress, trim, and extract audio from video.", status: "Available now", Icon: FileVideo, active: true },
   { name: "Other", href: "/tools/other", description: "Generate and scan QR codes and barcodes.", status: "Available now", Icon: Shapes, active: true },
 ];
 

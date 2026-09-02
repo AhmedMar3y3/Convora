@@ -1,4 +1,4 @@
-import { AudioLines, Barcode, Crop, FileOutput, GitMerge, ImageDown, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Stamp, Waves } from "lucide-react";
+import { AudioLines, Barcode, Crop, FileAudio2, FileOutput, GitMerge, ImageDown, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Stamp, Video, VideoIcon, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -110,6 +110,13 @@ export const audioTools = [
   { id: "audio-compressor", name: "Audio Compressor", shortName: "Compress", category: "Audio", description: "Reduce audio size with direct bitrate control and visible savings.", route: "/tools/audio/compress", icon: Waves, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3"] },
   { id: "audio-trimmer", name: "Audio Trimmer", shortName: "Trim", category: "Audio", description: "Select a precise section on a waveform, preview it, and export.", route: "/tools/audio/trim", icon: Scissors, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
   { id: "audio-merger", name: "Audio Merger", shortName: "Merge", category: "Audio", description: "Reorder and trim multiple clips, then join them into one track.", route: "/tools/audio/merge", icon: GitMerge, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
+] as const;
+
+export const videoTools = [
+  { id: "video-converter", name: "Video Converter", shortName: "Convert", category: "Video", description: "Convert MP4, WebM, MOV, AVI, and MKV with practical resolution, quality, codec, and FPS controls.", route: "/tools/video/convert", icon: Video, inputFormats: ["mp4", "webm", "mov", "avi", "mkv"], outputFormats: ["mp4", "webm", "mov", "avi", "mkv"] },
+  { id: "video-compressor", name: "Video Compressor", shortName: "Compress", category: "Video", description: "Make videos lighter with simple quality presets and a clear before-and-after size comparison.", route: "/tools/video/compress", icon: VideoIcon, inputFormats: ["mp4", "webm", "mov", "avi", "mkv"], outputFormats: ["mp4"] },
+  { id: "video-trimmer", name: "Video Trimmer", shortName: "Trim", category: "Video", description: "Choose start and end points on a timeline, preview the selection, and export the moment you need.", route: "/tools/video/trim", icon: Scissors, inputFormats: ["mp4", "webm", "mov", "avi", "mkv"], outputFormats: ["mp4", "webm", "mov", "avi", "mkv"] },
+  { id: "video-to-audio", name: "Video to Audio", shortName: "Extract audio", category: "Video", description: "Pull the soundtrack from a video and save it as MP3, WAV, AAC, M4A, or FLAC.", route: "/tools/video/to-audio", icon: FileAudio2, inputFormats: ["mp4", "webm", "mov", "avi", "mkv"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac"] },
 ] as const;
 
 export const otherTools = [
