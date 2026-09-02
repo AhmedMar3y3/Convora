@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { FileAudio } from "lucide-react";
-import { UpcomingCategoryPage } from "@/components/upcoming-category-page";
+import { ToolCard } from "@/components/tool-card";
+import { audioTools } from "@/tools/registry";
 
-export const metadata: Metadata = { title: "Audio Tools", description: "Upcoming private audio and voice tools from Convora." };
+export const metadata: Metadata = { title: "Audio Tools", description: "Convert, compress, trim, and merge audio privately with Convora." };
 
 export default function AudioToolsPage() {
-  return <UpcomingCategoryPage name="Audio & Voice" eyebrow="Audio tools" description="Convert, trim, compress, clean, and prepare voice and audio files in a focused workspace." icon={FileAudio} tools={["Audio converter", "Audio compressor", "Voice trimmer", "Noise cleanup"]} />;
+  return <main className="mx-auto w-[min(1120px,calc(100%-2rem))] py-20"><p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-strong)]">Audio</p><h1 className="mt-3 text-4xl font-semibold md:text-6xl">Audio tools with a pulse.</h1><p className="mt-5 max-w-2xl text-lg leading-8 text-muted">Convert, reduce, cut, and combine audio in focused workspaces with waveform previews and private request-time processing.</p><div className="mt-10 grid gap-4 md:grid-cols-2">{audioTools.map((tool) => <ToolCard key={tool.id} tool={tool} />)}</div></main>;
 }

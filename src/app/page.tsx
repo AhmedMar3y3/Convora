@@ -18,7 +18,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <LinkButton href="/tools">Explore all tools <ArrowRight size={18} aria-hidden /></LinkButton>
-            <LinkButton href="/tools/images" variant="secondary">Use image tools</LinkButton>
+            <LinkButton href="/tools/audio" variant="secondary">Use audio tools</LinkButton>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-muted">
             <span className="flex items-center gap-2"><Check size={16} className="text-[var(--accent-strong)]" /> Free to use</span>
@@ -81,9 +81,9 @@ export default function Home() {
       </section>
 
       <section className="mx-auto py-24 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-strong)]">Images are ready now</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent-strong)]">Images and audio are ready now</p>
         <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold md:text-5xl">Start with the tools already shipping.</h2>
-        <p className="mx-auto mt-5 max-w-xl text-muted">Convert, compress, resize, and crop images with batch support and matching input and output formats.</p>
+        <p className="mx-auto mt-5 max-w-xl text-muted">Convert and refine images, or convert, compress, trim, and merge audio with precise controls.</p>
         <LinkButton href="/tools" className="mt-8">Go to tools <ArrowRight size={18} /></LinkButton>
       </section>
 

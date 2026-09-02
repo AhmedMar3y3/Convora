@@ -1,4 +1,4 @@
-import { Crop, FileOutput, ImageDown, Maximize2, Minimize2, RotateCw, ScanSearch, ShieldCheck, Stamp } from "lucide-react";
+import { AudioLines, Crop, FileOutput, GitMerge, ImageDown, Maximize2, Minimize2, RotateCw, ScanSearch, Scissors, ShieldCheck, Stamp, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -103,6 +103,13 @@ export const tools = [
     inputFormats: acceptedImageExtensions,
     outputFormats: [],
   },
+] as const;
+
+export const audioTools = [
+  { id: "audio-converter", name: "Audio Converter", shortName: "Convert", category: "Audio", description: "Convert between MP3, WAV, AAC, M4A, FLAC, OGG, and OPUS.", route: "/tools/audio/convert", icon: AudioLines, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
+  { id: "audio-compressor", name: "Audio Compressor", shortName: "Compress", category: "Audio", description: "Reduce audio size with direct bitrate control and visible savings.", route: "/tools/audio/compress", icon: Waves, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3"] },
+  { id: "audio-trimmer", name: "Audio Trimmer", shortName: "Trim", category: "Audio", description: "Select a precise section on a waveform, preview it, and export.", route: "/tools/audio/trim", icon: Scissors, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
+  { id: "audio-merger", name: "Audio Merger", shortName: "Merge", category: "Audio", description: "Reorder and trim multiple clips, then join them into one track.", route: "/tools/audio/merge", icon: GitMerge, inputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"], outputFormats: ["mp3", "wav", "aac", "m4a", "flac", "ogg", "opus"] },
 ] as const;
 
 export function getTool(id: ToolId) {

@@ -1,8 +1,7 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, type LucideIcon } from "lucide-react";
 import { LinkButton } from "@/components/button";
-import type { tools } from "@/tools/registry";
 
-type Tool = (typeof tools)[number];
+type Tool = { name: string; shortName: string; description: string; route: string; icon: LucideIcon };
 
 export function ToolCard({ tool }: { tool: Tool }) {
   const Icon = tool.icon;

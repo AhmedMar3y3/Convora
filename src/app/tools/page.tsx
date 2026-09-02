@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const categories = [
   { name: "Image", href: "/tools/images", description: "Convert, compress, resize, and crop images.", status: "Available now", Icon: FileImage, active: true },
-  { name: "Audio", href: "/tools/audio", description: "Convert, trim, compress, and clean audio.", status: "Coming soon", Icon: FileAudio },
+  { name: "Audio", href: "/tools/audio", description: "Convert, compress, trim, and merge audio.", status: "Available now", Icon: FileAudio, active: true },
   { name: "Documents", href: "/tools/documents", description: "Convert, merge, split, and organize documents.", status: "Coming soon", Icon: FileText },
   { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
   { name: "Video", href: "/tools/video", description: "Convert, compress, resize, and trim video.", status: "Coming soon", Icon: FileVideo },
@@ -25,8 +25,8 @@ export default function ToolsPage() {
       <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">Each file category has its own focused workspace. Image tools are available today, with the remaining categories arriving independently.</p>
 
       <div className="mt-14 grid gap-4 md:grid-cols-2">
-        {categories.map(({ name, href, description, status, Icon, active }, index) => (
-          <Link key={name} href={href} className={index === 0 ? "group rounded-[8px] border border-[var(--accent)] bg-[var(--accent-soft)] p-7 md:col-span-2" : "group rounded-[8px] border border-[var(--border)] bg-[var(--surface)] p-7 transition hover:border-[var(--accent)]"}>
+        {categories.map(({ name, href, description, status, Icon, active }) => (
+          <Link key={name} href={href} className={active ? "group rounded-[8px] border border-[var(--accent)] bg-[var(--accent-soft)] p-7" : "group rounded-[8px] border border-[var(--border)] bg-[var(--surface)] p-7 transition hover:border-[var(--accent)]"}>
             <div className="flex items-start justify-between gap-5">
               <span className="grid size-12 place-items-center rounded-[8px] bg-[var(--surface-strong)] text-[var(--accent-strong)]"><Icon size={23} /></span>
               <span className={active ? "text-xs font-semibold text-[var(--accent-strong)]" : "text-xs font-medium text-muted"}>{status}</span>
