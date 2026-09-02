@@ -70,6 +70,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/tools/documents">Docs</Link>
               <Link href="/tools/pdf">PDF</Link>
               <Link href="/tools/video">Video</Link>
+              <Link href="/tools/data">Data</Link>
               <Link href="/tools/other">Other</Link>
             </nav>
             <ThemeToggle />

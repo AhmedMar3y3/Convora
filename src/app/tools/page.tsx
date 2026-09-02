@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowRight, FileAudio, FileImage, FileText, FileVideo, Layers3, Shapes, Sparkles } from "lucide-react";
+import { ArrowRight, Database, FileAudio, FileImage, FileText, FileVideo, Layers3, Shapes, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "File Tool Categories",
-  description: "Choose Convora tools for images, audio, QR codes, barcodes, documents, PDF, and video.",
+  description: "Choose Convora tools for images, audio, video, structured data, QR codes, barcodes, documents, and PDF.",
 };
 
 const categories = [
@@ -13,6 +13,7 @@ const categories = [
   { name: "Documents", href: "/tools/documents", description: "Convert, merge, split, and organize documents.", status: "Coming soon", Icon: FileText },
   { name: "PDF", href: "/tools/pdf", description: "Create, merge, split, and protect PDF files.", status: "Coming soon", Icon: Layers3 },
   { name: "Video", href: "/tools/video", description: "Convert, compress, trim, and extract audio from video.", status: "Available now", Icon: FileVideo, active: true },
+  { name: "Data", href: "/tools/data", description: "Convert, format, merge, split, and clean structured data.", status: "Available now", Icon: Database, active: true },
   { name: "Other", href: "/tools/other", description: "Generate and scan QR codes and barcodes.", status: "Available now", Icon: Shapes, active: true },
 ];
 

@@ -1,4 +1,4 @@
-import { AudioLines, Barcode, Crop, FileAudio2, FileOutput, GitMerge, ImageDown, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Stamp, Video, VideoIcon, Waves } from "lucide-react";
+import { AudioLines, Barcode, Braces, Crop, FileAudio2, FileJson, FileOutput, FileSpreadsheet, Files, GitMerge, ImageDown, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, Video, VideoIcon, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -124,6 +124,15 @@ export const otherTools = [
   { id: "qr-scanner", name: "QR Code Scanner", shortName: "Scan QR", category: "Other", description: "Upload a QR code image, decode its content, then copy or open the result.", route: "/tools/other/qr-scanner", icon: ScanLine },
   { id: "barcode-generator", name: "Barcode Generator", shortName: "Generate barcode", category: "Other", description: "Generate Code 128, Code 39, EAN-13, EAN-8, and UPC-A barcodes.", route: "/tools/other/barcode-generator", icon: Barcode },
   { id: "barcode-scanner", name: "Barcode Scanner", shortName: "Scan barcode", category: "Other", description: "Read common barcode formats from an image and copy the decoded value.", route: "/tools/other/barcode-scanner", icon: ScanBarcode },
+] as const;
+
+export const dataTools = [
+  { id: "csv-json", name: "CSV ↔ JSON Converter", shortName: "Convert", category: "Data", description: "Convert CSV to JSON and structured JSON back to CSV.", route: "/tools/data/csv-json", icon: FileJson },
+  { id: "csv-excel", name: "CSV ↔ Excel Converter", shortName: "Convert", category: "Data", description: "Move between CSV and XLSX while keeping headers and rows intact.", route: "/tools/data/csv-excel", icon: FileSpreadsheet },
+  { id: "json-formatter", name: "JSON Formatter & Viewer", shortName: "Format JSON", category: "Data", description: "Validate, prettify, minify, search, and explore JSON.", route: "/tools/data/json-formatter", icon: Braces },
+  { id: "merge-csv", name: "Merge CSV & Excel Files", shortName: "Merge files", category: "Data", description: "Combine CSV and Excel files and align their columns by header.", route: "/tools/data/merge-csv", icon: Files },
+  { id: "split-csv", name: "Split CSV & Excel", shortName: "Split file", category: "Data", description: "Split large CSV or Excel files by rows or a target file count.", route: "/tools/data/split-csv", icon: Scissors },
+  { id: "csv-deduplicator", name: "CSV & Excel Deduplicator", shortName: "Remove duplicates", category: "Data", description: "Detect and remove duplicate rows from CSV or XLSX using the columns you select.", route: "/tools/data/deduplicate-csv", icon: Sparkles },
 ] as const;
 
 export function getTool(id: ToolId) {
