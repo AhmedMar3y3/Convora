@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
-import { audioTools, dataTools, otherTools, securityTools, tools, videoTools } from "@/tools/registry";
+import { audioTools, dataTools, otherTools, pdfTools, securityTools, tools, videoTools } from "@/tools/registry";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const routes = ["", "/tools", "/tools/images", "/tools/audio", "/tools/documents", "/tools/pdf", "/tools/video", "/tools/data", "/tools/security", "/tools/other", ...tools.map((tool) => tool.route), ...audioTools.map((tool) => tool.route), ...videoTools.map((tool) => tool.route), ...dataTools.map((tool) => tool.route), ...securityTools.map((tool) => tool.route), ...otherTools.map((tool) => tool.route)];
+  const routes = ["", "/tools", "/tools/images", "/tools/audio", "/tools/documents", "/tools/pdf", "/tools/video", "/tools/data", "/tools/security", "/tools/other", ...tools.map((tool) => tool.route), ...audioTools.map((tool) => tool.route), ...videoTools.map((tool) => tool.route), ...dataTools.map((tool) => tool.route), ...securityTools.map((tool) => tool.route), ...otherTools.map((tool) => tool.route), ...pdfTools.map((tool) => tool.route)];
 
   return routes.map((route) => ({
     url: `https://convora.vercel.app${route}`,

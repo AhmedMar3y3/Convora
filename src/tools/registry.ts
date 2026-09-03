@@ -1,4 +1,4 @@
-import { AudioLines, Barcode, Braces, CaseSensitive, Crop, FileAudio2, FileImage, FileJson, FileKey2, FileLock2, FileOutput, FileSearch, FileSpreadsheet, FileText, Files, Fingerprint, GitCompare, GitMerge, ImageDown, KeyRound, ListTree, Maximize2, Minimize2, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, TextCursorInput, Video, VideoIcon, Waves } from "lucide-react";
+import { AudioLines, Barcode, Braces, CaseSensitive, Crop, FileAudio2, FileImage, FileJson, FileKey2, FileLock2, FileOutput, FilePenLine, FileSearch, FileSpreadsheet, FileText, Files, Fingerprint, GitCompare, GitMerge, ImageDown, KeyRound, ListOrdered, ListTree, LockKeyhole, Maximize2, Minimize2, Presentation, QrCode, RotateCw, ScanBarcode, ScanLine, ScanSearch, Scissors, ShieldCheck, Sparkles, Stamp, TextCursorInput, UnlockKeyhole, Video, VideoIcon, Waves } from "lucide-react";
 import { acceptedImageExtensions, outputFormats } from "@/formats/image-formats";
 
 export type ToolId = "image-converter" | "image-compressor" | "image-resizer" | "image-cropper" | "image-to-pdf" | "image-watermark" | "image-transform" | "image-metadata-remover" | "image-metadata-viewer";
@@ -155,6 +155,24 @@ export const documentTools = [
   { id: "split-document", name: "Split Document", shortName: "Split document", category: "Documents", description: "Define page ranges and export each range as a separate Word document.", route: "/tools/documents/split", icon: Scissors },
   { id: "extract-document-sections", name: "Extract Sections", shortName: "Choose sections", category: "Documents", description: "Select heading-defined sections and create a focused new DOCX.", route: "/tools/documents/extract-sections", icon: ListTree },
   { id: "document-counter", name: "Word & Character Counter", shortName: "Count text", category: "Documents", description: "Measure words, characters, sentences, paragraphs, reading time, and speaking time.", route: "/tools/documents/counter", icon: CaseSensitive },
+] as const;
+
+export const pdfTools = [
+  { id: "merge-pdf", name: "Merge PDF", shortName: "Merge", category: "PDF", description: "Arrange multiple PDFs and combine them into one lossless document.", route: "/tools/pdf/merge", icon: GitMerge },
+  { id: "split-pdf", name: "Split PDF", shortName: "Split", category: "PDF", description: "Split a PDF by ranges, individual pages, or evenly sized groups.", route: "/tools/pdf/split", icon: Scissors },
+  { id: "remove-pdf-pages", name: "Remove PDF Pages", shortName: "Remove pages", category: "PDF", description: "Select unwanted pages visually and create a clean new PDF.", route: "/tools/pdf/remove-pages", icon: FileOutput },
+  { id: "extract-pdf-pages", name: "Extract PDF Pages", shortName: "Extract pages", category: "PDF", description: "Keep selected pages in their original order as a new PDF.", route: "/tools/pdf/extract-pages", icon: Files },
+  { id: "organize-pdf", name: "Organize PDF", shortName: "Organize", category: "PDF", description: "Reorder, rotate, duplicate, and remove pages in a visual workspace.", route: "/tools/pdf/organize", icon: ListTree },
+  { id: "compress-pdf", name: "Compress PDF", shortName: "Compress", category: "PDF", description: "Optimize PDF structure and see honest before-and-after savings.", route: "/tools/pdf/compress", icon: Minimize2 },
+  { id: "word-to-pdf", name: "Word to PDF", shortName: "Convert Word", category: "PDF", description: "Convert DOCX documents to PDF with an honest browser-rendered preview.", route: "/tools/pdf/word-to-pdf", icon: FileText },
+  { id: "powerpoint-to-pdf", name: "PowerPoint to PDF", shortName: "Extract slide text", category: "PDF", description: "Extract slide text in order and create one readable PDF page per slide.", route: "/tools/pdf/powerpoint-to-pdf", icon: Presentation },
+  { id: "excel-to-pdf", name: "Excel to PDF", shortName: "Convert sheets", category: "PDF", description: "Choose workbook sheets and export them with practical page controls.", route: "/tools/pdf/excel-to-pdf", icon: FileSpreadsheet },
+  { id: "html-to-pdf", name: "HTML to PDF", shortName: "Convert HTML", category: "PDF", description: "Preview sanitized HTML and export a styled PDF without running scripts.", route: "/tools/pdf/html-to-pdf", icon: Braces },
+  { id: "pdf-to-word", name: "PDF to Word", shortName: "Create DOCX", category: "PDF", description: "Rebuild text-based PDFs as editable Word documents.", route: "/tools/pdf/pdf-to-word", icon: FileOutput },
+  { id: "edit-pdf", name: "Edit PDF", shortName: "Add overlays", category: "PDF", description: "Add text, shapes, images, and freehand marks without altering original content.", route: "/tools/pdf/edit", icon: FilePenLine },
+  { id: "protect-pdf", name: "Protect PDF", shortName: "Encrypt", category: "PDF", description: "Protect a PDF locally with AES-256 and optional document permissions.", route: "/tools/pdf/protect", icon: LockKeyhole },
+  { id: "unlock-pdf", name: "Unlock PDF", shortName: "Remove password", category: "PDF", description: "Remove PDF protection locally when you know the current password.", route: "/tools/pdf/unlock", icon: UnlockKeyhole },
+  { id: "page-numbers-pdf", name: "Add Page Numbers", shortName: "Number pages", category: "PDF", description: "Add simple page numbers to every page of a PDF.", route: "/tools/pdf/page-numbers", icon: ListOrdered },
 ] as const;
 
 export function getTool(id: ToolId) {
