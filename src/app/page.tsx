@@ -95,7 +95,7 @@ export default function Home() {
         <Brand />
         <p>
           © 2026{" "}
-          <a href="https://rosybrown-lion-304022.hostingersite.com/" target="_blank" rel="noreferrer" className="font-semibold text-[var(--foreground)] hover:text-[var(--accent-strong)]">
+          <a href="https://ahmed-mar3y.space/" target="_blank" rel="noreferrer" className="font-semibold text-[var(--foreground)] hover:text-[var(--accent-strong)]">
             Ahmed Marey
           </a>
           . All rights reserved.
